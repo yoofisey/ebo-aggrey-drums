@@ -1,0 +1,74 @@
+export interface ImageCredit {
+  file: string;
+  title: string;
+  artist: string;
+  license: string;
+  licenseUrl: string;
+  source: string;
+}
+
+export const imageCredits: ImageCredit[] = [
+  {
+    file: "studio-kit.jpg",
+    title: "Drum set in a music studio with wooden walls",
+    artist: "Shixart1985",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    source:
+      "https://commons.wikimedia.org/wiki/File:Drum_set_in_a_music_studio_with_wooden_walls.jpg",
+  },
+  {
+    file: "live-drummer.jpg",
+    title: "Mom's Day drummer live in concert",
+    artist: "Erik Albers",
+    license: "CC0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    source:
+      "https://commons.wikimedia.org/wiki/File:Mom%27s_Day_drummer_live_in_concert.jpg",
+  },
+  {
+    file: "rehearsal-kit.jpg",
+    title: "A well-arranged drum kit sits in a rehearsal studio",
+    artist: "Shixart1985",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    source:
+      "https://commons.wikimedia.org/wiki/File:A_well-arranged_drum_kit_sits_in_a_rehearsal_studio,_featuring_various_drums_and_cymbals.jpg",
+  },
+  {
+    file: "studio-mics.jpg",
+    title: "Drum set with cymbals and microphones in a music studio",
+    artist: "Shixart1985",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    source:
+      "https://commons.wikimedia.org/wiki/File:Drum_set_with_cymbals_and_microphones_in_a_music_studio.jpg",
+  },
+  {
+    file: "jazz-drummer.jpg",
+    title: "Jazz drummer on the concert",
+    artist: "Lesless",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source:
+      "https://commons.wikimedia.org/wiki/File:Jazz_drummer_on_the_concert_20230512_210226.jpg",
+  },
+  {
+    file: "practice-kit.jpg",
+    title: "Drum set ready for practice in a music studio",
+    artist: "Shixart1985",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    source:
+      "https://commons.wikimedia.org/wiki/File:Drum_set_ready_for_practice_in_a_music_studio_with_microphone_and_cymbals.jpg",
+  },
+  {
+    file: "festival-drummer.jpg",
+    title: "Euis Siti Aisyah (Voice of Baceprot) at Valkhof Festival",
+    artist: "FakirNL",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source:
+      "https://commons.wikimedia.org/wiki/File:Euis_Siti_Aisyah_(drummer_Voice_of_Baceprot)_op_het_Valkhof_Festival_2022.jpg",
+  },
+];
