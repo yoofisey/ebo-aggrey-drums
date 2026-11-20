@@ -11,7 +11,7 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "text-[12px] font-medium tracking-[0.01em] text-ink-subtle",
+        "text-[12px] font-semibold tracking-[0.02em] text-line",
         className,
       )}
     >

@@ -1,60 +1,51 @@
 import Link from "next/link";
-import { ArrowRightIcon, DiscIcon, DrumIcon } from "@/components/icons";
+import { DrumIcon } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { site } from "@/lib/site";
 
-const explore = [
-  { href: "/book", label: "Book Ebo" },
+const pageLinks = [
   { href: "/", label: "Home" },
+  { href: "/lessons", label: "Lessons" },
   { href: "/materials", label: "Materials" },
-  { href: "/materials/add", label: "Add material" },
-  { href: "/about", label: "About Ebo" },
+  { href: "/play-on-your-record", label: "Play on your record" },
+  { href: "/pricing", label: "Pricing" },
 ];
+
+const socialPlaceholders = ["[INSTAGRAM]", "[YOUTUBE]", "[BANDCAMP]"];
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-canvas-raised">
-      <div className="pointer-events-none absolute -bottom-24 right-0 select-none text-[clamp(9rem,20vw,18rem)] font-semibold leading-none tracking-[-0.09em] text-ink/[0.025]">
-        Ebo
-      </div>
-
-      <Container className="relative">
-        <div className="grid gap-12 py-16 md:grid-cols-[1.5fr_0.8fr_0.9fr]">
-          <div className="reveal">
+    <footer className="bg-canvas-alt py-[88px]">
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_0.6fr_0.6fr]">
+          <div>
             <div className="flex items-center gap-3">
-              <span className="ink-gradient flex size-9 items-center justify-center rounded-2xl text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+              <span className="control flex size-10 items-center justify-center text-line">
                 <DrumIcon className="size-5" />
               </span>
-              <span className="text-[14px] font-semibold tracking-[-0.02em]">
+              <span className="text-[14px] font-bold tracking-[-0.02em]">
                 Ebo Aggrey
               </span>
             </div>
-            <p className="mt-5 max-w-xs text-sm leading-6 text-ink-muted">
-              Drum lessons, notes and materials from Ebo. Made for people who
-              want to feel more at home behind the kit.
+            <p className="mt-6 max-w-sm text-[15px] leading-8 text-ink-muted">
+              Lessons, practice materials and session drums. Everything starts
+              with listening.
             </p>
-            <ButtonLink
-              href="/book"
-              variant="secondary"
-              size="sm"
-              className="mt-7"
-            >
-              <DiscIcon className="size-3.5" />
-              Have a record? Book Ebo
-              <ArrowRightIcon className="size-3.5" />
+            <ButtonLink href="/book" className="mt-8">
+              Start free lesson
             </ButtonLink>
           </div>
 
-          <div className="reveal reveal-delay-1">
-            <Eyebrow>Have a look</Eyebrow>
-            <ul className="mt-5 space-y-3">
-              {explore.map((item) => (
+          <div>
+            <Eyebrow>Pages</Eyebrow>
+            <ul className="mt-6 grid gap-3">
+              {pageLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-ink-muted transition-colors hover:text-ink"
+                    className="text-[15px] text-line transition-colors hover:text-ink"
                   >
                     {item.label}
                   </Link>
@@ -63,42 +54,34 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="reveal reveal-delay-2">
-            <Eyebrow>Good to know</Eyebrow>
-            <ul className="mt-5 space-y-3">
+          <div>
+            <Eyebrow>Elsewhere</Eyebrow>
+            <ul className="mt-6 grid gap-3">
+              {socialPlaceholders.map((label) => (
+                <li key={label} className="placeholder text-[15px]">
+                  {label}
+                </li>
+              ))}
               <li>
                 <Link
-                  href="/about#approach"
-                  className="text-sm text-ink-muted transition-colors hover:text-ink"
+                  href="/about"
+                  className="text-[15px] text-line transition-colors hover:text-ink"
                 >
-                  How I teach
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about#note"
-                  className="text-sm text-ink-muted transition-colors hover:text-ink"
-                >
-                  A note from Ebo
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about#credits"
-                  className="text-sm text-ink-muted transition-colors hover:text-ink"
-                >
-                  Photograph credits
+                  Photo credits
                 </Link>
               </li>
             </ul>
+            <p className="mt-5 text-[12px] leading-5 text-ink-subtle">
+              Add Ebo&apos;s profile links here when they are ready.
+            </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 py-6 text-xs tracking-[0.02em] text-ink-subtle sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-2 text-[12px] text-ink-subtle sm:flex-row sm:items-center sm:justify-between">
           <span>
             Copyright {site.copyrightYear} {site.name}
           </span>
-          <span>Questions welcome</span>
+          <span>Prototype — placeholders mark what is still needed</span>
         </div>
       </Container>
     </footer>

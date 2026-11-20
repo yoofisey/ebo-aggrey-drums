@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "ghost" | "light";
+type Variant = "primary" | "secondary" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonStyleProps {
@@ -12,19 +12,15 @@ interface ButtonStyleProps {
 }
 
 const variants: Record<Variant, string> = {
-  primary:
-    "ink-gradient text-white shadow-[0_8px_24px_rgba(117,54,34,0.2)] hover:brightness-105 hover:shadow-[0_12px_34px_rgba(117,54,34,0.25)] active:shadow-[0_5px_16px_rgba(117,54,34,0.18)]",
-  secondary:
-    "bg-surface text-ink shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)] hover:bg-surface-raised hover:shadow-[0_12px_30px_rgba(0,0,0,0.09)]",
-  ghost: "text-ink-muted hover:bg-surface-raised hover:text-ink",
-  light:
-    "bg-white text-ink shadow-[0_8px_24px_rgba(0,0,0,0.18)] hover:bg-white/90",
+  primary: "bg-bright text-canvas hover:bg-white",
+  secondary: "bg-control text-ink hover:bg-raised",
+  ghost: "bg-transparent text-line hover:bg-control hover:text-ink",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-9 px-4 text-[13px]",
-  md: "h-11 px-5 text-sm",
-  lg: "h-12 px-6 text-sm",
+  sm: "min-h-11 px-4 text-[14px]",
+  md: "min-h-12 px-5 text-[15px]",
+  lg: "min-h-12 px-6 text-[15px]",
 };
 
 export function buttonStyles({
@@ -33,52 +29,58 @@ export function buttonStyles({
   className,
 }: ButtonStyleProps = {}): string {
   return cn(
-    "inline-flex shrink-0 items-center justify-center gap-2 rounded-full font-medium tracking-[-0.01em] transition-[background-color,box-shadow,color,transform,filter] duration-200 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex shrink-0 items-center justify-center gap-2 rounded-[12px] font-semibold tracking-[-0.01em] transition-colors duration-200",
     variants[variant],
     sizes[size],
     className,
   );
 }
 
-export function ButtonLink({
-  href,
-  children,
-  onClick,
-  ...props
-}: ButtonStyleProps & {
-  href: string;
-  children: ReactNode;
-  onClick?: () => void;
-}) {
-  return (
-    <Link href={href} className={buttonStyles(props)} onClick={onClick}>
-      {children}
-    </Link>
-  );
-}
-
 export function Button({
   children,
-  type = "button",
   variant,
   size,
   className,
+  type = "button",
   onClick,
-  disabled,
 }: ButtonStyleProps & {
   children: ReactNode;
-  type?: "button" | "submit" | "reset";
+  type?: "button" | "submit";
   onClick?: () => void;
-  disabled?: boolean;
 }) {
   return (
     <button
       type={type}
       className={buttonStyles({ variant, size, className })}
       onClick={onClick}
-      disabled={disabled}
     >
       {children}
     </button>
+  );
+}
+
+export function ButtonLink({
+  children,
+  href,
+  variant,
+  size,
+  className,
+  onClick,
+  current,
+}: ButtonStyleProps & {
+  children: ReactNode;
+  href: string;
+  onClick?: () => void;
+  current?: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      aria-current={current ? "page" : undefined}
+      className={buttonStyles({ variant, size, className })}
+      onClick={onClick}
+    >
+      {children}
+    </Link>
   );
 }
