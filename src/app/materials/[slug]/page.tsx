@@ -28,6 +28,8 @@ import {
 } from "@/lib/content";
 import { formatDate } from "@/lib/utils";
 
+export const instant = false;
+
 interface PageParams {
   params: Promise<{ slug: string }>;
 }
