@@ -117,6 +117,13 @@ export function RequestConfirmation({
         aria-labelledby="request-confirmation-title"
         className="confirmation-panel relative w-full max-w-[520px] overflow-hidden rounded-[20px] border border-white/10 bg-card p-8 shadow-[0_32px_90px_rgba(0,0,0,0.55)] sm:p-12"
       >
+        <h2 id="request-confirmation-title" className="sr-only">
+          {content.title}
+        </h2>
+        <p aria-live="polite" aria-atomic="true" className="sr-only">
+          {phase === "loading" ? content.steps[step] : "Draft ready to send"}
+        </p>
+
         <button
           ref={closeRef}
           type="button"
@@ -139,7 +146,7 @@ export function RequestConfirmation({
             <p className="mt-9 text-[12px] font-semibold tracking-[0.02em] text-line">
               Ebo Aggrey / drums
             </p>
-            <p aria-live="polite" className="mt-3 text-[14px] text-ink-muted">
+            <p className="mt-3 text-[14px] text-ink-muted">
               {content.steps[step]}
             </p>
 
@@ -156,10 +163,7 @@ export function RequestConfirmation({
             <p className="mt-8 text-[12px] font-semibold tracking-[0.02em] text-line">
               {content.eyebrow}
             </p>
-            <h2
-              id="request-confirmation-title"
-              className="mt-3 text-[32px] font-bold leading-tight tracking-[-0.04em]"
-            >
+            <h2 className="mt-3 text-[32px] font-bold leading-tight tracking-[-0.04em]">
               {content.title}
             </h2>
             <p className="mt-4 text-[14px] leading-7 text-ink-muted">

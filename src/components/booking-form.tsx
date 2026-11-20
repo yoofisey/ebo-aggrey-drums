@@ -157,7 +157,7 @@ export function BookingForm() {
       ) : null}
 
       <RequestConfirmation
-        key={mailto ?? "confirmation"}
+        key={confirming ? (mailto ?? "confirmation") : "closed"}
         open={confirming && mailto !== null}
         href={mailto ?? ""}
         context="lesson"

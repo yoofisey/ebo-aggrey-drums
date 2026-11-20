@@ -46,11 +46,7 @@ export function SiteHeader() {
     >
       <Container>
         <div className="flex h-[72px] items-center justify-between gap-6">
-          <Link
-            href="/"
-            className="flex items-center gap-3"
-            aria-label="Ebo Aggrey Drums, home"
-          >
+          <Link href="/" className="flex items-center gap-3">
             <span className="control flex size-10 items-center justify-center text-line">
               <DrumIcon className="size-5" />
             </span>
