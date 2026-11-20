@@ -54,7 +54,7 @@ const samples = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative flex min-h-[calc(100svh-72px)] items-center overflow-hidden py-24">
+      <section className="relative flex min-h-[clamp(420px,50vw,700px)] items-center overflow-hidden py-20">
         <HeroStage />
         <Container className="relative">
           <div className="max-w-2xl">
