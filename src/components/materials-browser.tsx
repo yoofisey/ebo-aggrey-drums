@@ -89,7 +89,7 @@ export function MaterialsBrowser({ items }: { items: ContentItem[] }) {
       </div>
 
       <h2 className="sr-only">Materials</h2>
-      <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="reveal-group mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filteredItems.map((item) => (
           <ContentCard key={item.slug} item={item} />
         ))}

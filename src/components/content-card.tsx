@@ -8,6 +8,7 @@ export function ContentCard({ item }: { item: ContentItem }) {
   return (
     <Link
       href={`/materials/${item.slug}`}
+      data-reveal
       className="card card-hover group flex min-h-[260px] flex-col p-6"
     >
       <div className="flex items-start justify-between gap-4">

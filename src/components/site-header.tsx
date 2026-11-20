@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CloseIcon,
   DrumIcon,
@@ -23,12 +23,27 @@ const navigation = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 bg-canvas/95 backdrop-blur-xl">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300",
+        scrolled
+          ? "border-white/10 bg-canvas shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
+          : "border-transparent bg-canvas/90",
+      )}
+    >
       <Container>
         <div className="flex h-[72px] items-center justify-between gap-6">
           <Link

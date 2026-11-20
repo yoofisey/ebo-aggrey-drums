@@ -145,7 +145,7 @@ export default async function MaterialDetailPage({ params }: PageParams) {
         </div>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">
-          <div>
+          <div data-reveal>
             <div className="flex flex-wrap items-center gap-3">
               <KindBadge kind={item.kind} />
               <Eyebrow>{item.tags[0]}</Eyebrow>
@@ -194,7 +194,7 @@ export default async function MaterialDetailPage({ params }: PageParams) {
             </div>
           </div>
 
-          <aside className="card h-fit p-6">
+          <aside data-reveal className="card h-fit p-6">
             <Eyebrow>The details</Eyebrow>
             <dl className="mt-6 grid gap-3">
               {details.map((detail) => {
@@ -246,7 +246,7 @@ export default async function MaterialDetailPage({ params }: PageParams) {
               <ChevronRightIcon className="size-4" />
             </ButtonLink>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="reveal-group mt-12 grid gap-6 md:grid-cols-2">
             {related.map((entry) => (
               <ContentCard key={entry.slug} item={entry} />
             ))}

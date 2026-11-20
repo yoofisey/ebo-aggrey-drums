@@ -38,11 +38,11 @@ export default function BookPage() {
         intro="Tell me where you are and what you want to feel better about. A short note is enough; we can fill in the rest together."
       />
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
+      <div className="reveal-group mt-14 grid gap-6 md:grid-cols-3">
         {notes.map((note) => {
           const Icon = note.icon;
           return (
-            <div key={note.title} className="card p-6">
+            <div key={note.title} data-reveal className="card p-6">
               <Icon className="size-5 text-line" />
               <h2 className="mt-8 text-[17px] font-bold tracking-[-0.025em]">
                 {note.title}
@@ -56,7 +56,7 @@ export default function BookPage() {
       </div>
 
       <div className="mt-12 grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
-        <div>
+        <div data-reveal>
           <Eyebrow>Before you send</Eyebrow>
           <h2 className="mt-6 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.04em]">
             Three small things.

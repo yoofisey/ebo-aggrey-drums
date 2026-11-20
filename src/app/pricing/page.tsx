@@ -51,10 +51,11 @@ export default function PricingPage() {
           intro="Prices are placeholders until Ebo supplies them. The work behind each one is real."
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="reveal-group mt-14 grid gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
               key={plan.name}
+              data-reveal
               className={cn(
                 "flex flex-col p-8",
                 plan.popular ? "card card-raised" : "card",
@@ -103,7 +104,7 @@ export default function PricingPage() {
       </Section>
 
       <Section tone="alt">
-        <div className="card p-8 sm:p-10">
+        <div data-reveal className="card p-8 sm:p-10">
           <Eyebrow>Good to know</Eyebrow>
           <h2 className="mt-5 text-[28px] font-bold tracking-[-0.035em]">
             No payment is taken on this site

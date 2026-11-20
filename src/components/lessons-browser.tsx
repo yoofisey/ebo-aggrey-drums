@@ -32,7 +32,7 @@ export function LessonsBrowser() {
       </div>
 
       <h2 className="sr-only">Lessons</h2>
-      <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="reveal-group mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {visible.map((lesson) => (
           <LessonCard key={lesson.slug} lesson={lesson} />
         ))}

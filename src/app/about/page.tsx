@@ -20,7 +20,7 @@ export default function AboutPage() {
           intro="I play drums and I teach them. Whether it is a lesson or a record session, we start with what you can hear and what you can do today."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="reveal-group mt-14 grid gap-6 md:grid-cols-3">
           {[
             {
               title: "Listen properly",
@@ -35,7 +35,7 @@ export default function AboutPage() {
               copy: "A calm room, clear references and no ego in the way of the song.",
             },
           ].map((item) => (
-            <div key={item.title} className="card p-7">
+            <div key={item.title} data-reveal className="card p-7">
               <h2 className="text-[20px] font-bold tracking-[-0.03em]">
                 {item.title}
               </h2>
@@ -56,9 +56,9 @@ export default function AboutPage() {
           The photographs in this prototype are borrowed from Wikimedia Commons.
           Details and licences are below.
         </p>
-        <ul className="mt-12 grid gap-4 md:grid-cols-2">
+        <ul className="reveal-group mt-12 grid gap-4 md:grid-cols-2">
           {imageCredits.map((credit) => (
-            <li key={credit.file} className="card p-6">
+            <li key={credit.file} data-reveal className="card p-6">
               <p className="text-[15px] font-semibold">{credit.title}</p>
               <p className="mt-2 text-[13px] text-ink-muted">
                 {credit.artist} · {credit.license}

@@ -29,7 +29,7 @@ export function buttonStyles({
   className,
 }: ButtonStyleProps = {}): string {
   return cn(
-    "inline-flex shrink-0 items-center justify-center gap-2 rounded-[12px] font-semibold tracking-[-0.01em] transition-colors duration-200",
+    "inline-flex shrink-0 items-center justify-center gap-2 rounded-[12px] font-semibold tracking-[-0.01em] transition-[background-color,color,transform] duration-200 active:scale-[0.98]",
     variants[variant],
     sizes[size],
     className,

@@ -24,7 +24,7 @@ export default function AddMaterialPage() {
       <div className="mt-14 grid gap-12 lg:grid-cols-[1.25fr_0.75fr]">
         <MaterialForm />
 
-        <aside>
+        <aside data-reveal>
           <div className="flex items-center justify-between gap-4">
             <Eyebrow>Recently added</Eyebrow>
             <Link

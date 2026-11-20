@@ -1,15 +1,14 @@
-import type { ReactNode } from "react";
+import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 export function Eyebrow({
   children,
   className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+  ...props
+}: ComponentProps<"p">) {
   return (
     <p
+      {...props}
       className={cn(
         "text-[12px] font-semibold tracking-[0.02em] text-line",
         className,

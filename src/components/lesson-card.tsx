@@ -6,6 +6,7 @@ export function LessonCard({ lesson }: { lesson: Lesson }) {
   return (
     <Link
       href={lesson.materialHref}
+      data-reveal
       className="card card-hover group flex flex-col overflow-hidden"
       aria-label={`Watch lesson: ${lesson.title}`}
     >

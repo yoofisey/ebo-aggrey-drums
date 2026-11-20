@@ -86,9 +86,9 @@ export default function PlayOnYourRecordPage() {
           intro="Got a record that needs a drummer? Send a reference and a few words about the song. I'll listen first and tell you honestly what I hear."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="reveal-group mt-14 grid gap-6 md:grid-cols-3">
           {benefits.map((benefit) => (
-            <div key={benefit.title} className="card flex flex-col p-7">
+            <div key={benefit.title} data-reveal className="card flex flex-col p-7">
               <CheckIcon className="size-5 text-line" />
               <h2 className="mt-10 text-[20px] font-bold tracking-[-0.03em]">
                 {benefit.title}
@@ -106,9 +106,9 @@ export default function PlayOnYourRecordPage() {
         <h2 className="mt-6 text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.045em]">
           Four steps, no ceremony.
         </h2>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="reveal-group mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="card p-6">
+            <div key={step.number} data-reveal className="card p-6">
               <span className="text-[12px] font-semibold text-line">
                 {step.number}
               </span>
@@ -125,7 +125,7 @@ export default function PlayOnYourRecordPage() {
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div>
+          <div data-reveal>
             <Eyebrow>Audio samples</Eyebrow>
             <h2 className="mt-6 text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.045em]">
               Hear the approach.
@@ -136,7 +136,7 @@ export default function PlayOnYourRecordPage() {
             </p>
             <AudioIcon className="mt-8 size-6 text-line" />
           </div>
-          <div className="card p-7">
+          <div data-reveal className="card p-7">
             <div className="grid gap-3">
               {samples.map((sample) => (
                 <div
@@ -156,9 +156,9 @@ export default function PlayOnYourRecordPage() {
         <h2 className="mt-6 text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.045em]">
           Three ways to work.
         </h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="reveal-group mt-12 grid gap-6 md:grid-cols-3">
           {packages.map((item) => (
-            <div key={item.name} className="card flex flex-col p-7">
+            <div key={item.name} data-reveal className="card flex flex-col p-7">
               <DiscIcon className="size-5 text-line" />
               <h3 className="mt-10 text-[20px] font-bold tracking-[-0.03em]">
                 {item.name}
@@ -176,7 +176,7 @@ export default function PlayOnYourRecordPage() {
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
-          <div>
+          <div data-reveal>
             <Eyebrow>Get a quote</Eyebrow>
             <h2 className="mt-6 text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.045em]">
               Tell me about the song.
@@ -197,7 +197,7 @@ export default function PlayOnYourRecordPage() {
       </Section>
 
       <Section tone="alt">
-        <div className="card flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between">
+        <div data-reveal className="card flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <Eyebrow>Not a record?</Eyebrow>
             <h2 className="mt-4 text-[26px] font-bold tracking-[-0.035em]">

@@ -81,7 +81,7 @@ export default function HomePage() {
       </section>
 
       <Section tone="alt" className="py-16">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-reveal className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label}>
               <p className="placeholder text-[20px] font-bold tracking-[-0.03em]">
@@ -100,13 +100,14 @@ export default function HomePage() {
           title="Pick a place to start."
           intro="Three ways in. Each one begins with listening before playing."
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="reveal-group mt-12 grid gap-6 md:grid-cols-3">
           {paths.map((path) => {
             const Icon = path.icon;
             return (
               <Link
                 key={path.number}
                 href="/lessons"
+                data-reveal
                 className="card card-hover group flex min-h-[280px] flex-col p-7"
               >
                 <div className="flex items-start justify-between">
@@ -135,7 +136,7 @@ export default function HomePage() {
 
       <Section tone="alt">
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
-          <div>
+          <div data-reveal>
             <Eyebrow>Featured lesson</Eyebrow>
             <h2 className="mt-6 text-balance text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.045em]">
               The feel comes before the fill.
@@ -166,7 +167,7 @@ export default function HomePage() {
             <ArrowRightIcon className="size-4" />
           </ButtonLink>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="reveal-group mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {contentItems.slice(0, 3).map((item) => (
             <ContentCard key={item.slug} item={item} />
           ))}
@@ -175,7 +176,7 @@ export default function HomePage() {
 
       <Section tone="alt">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
+          <div data-reveal>
             <Eyebrow>Session drummer</Eyebrow>
             <h2 className="mt-6 text-balance text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.045em]">
               Some songs need a drummer, not a lesson.
@@ -189,7 +190,7 @@ export default function HomePage() {
               <ArrowRightIcon className="size-4" />
             </ButtonLink>
           </div>
-          <div className="card p-7">
+          <div data-reveal className="card p-7">
             <div className="flex items-center gap-3 text-line">
               <AudioIcon className="size-5" />
               <Eyebrow>Listen first</Eyebrow>
@@ -212,7 +213,7 @@ export default function HomePage() {
       </Section>
 
       <Section>
-        <div className="card flex flex-col gap-8 p-8 sm:p-12 lg:flex-row lg:items-center lg:justify-between">
+        <div data-reveal className="card flex flex-col gap-8 p-8 sm:p-12 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
             <Eyebrow>Start here</Eyebrow>
             <h2 className="mt-5 text-balance text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.04em]">
@@ -231,7 +232,7 @@ export default function HomePage() {
       </Section>
 
       <Section className="pt-0">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="reveal-group grid gap-6 md:grid-cols-3">
           {[FolderIcon, DiscIcon, UserIcon].map((Icon, index) => {
             const links = ["/materials", "/play-on-your-record", "/about"];
             const titles = ["Materials shelf", "Play on your record", "About Ebo"];
@@ -244,6 +245,7 @@ export default function HomePage() {
               <Link
                 key={titles[index]}
                 href={links[index]}
+                data-reveal
                 className="card card-hover group flex min-h-40 flex-col justify-between p-6"
               >
                 <Icon className="size-5 text-line" />
