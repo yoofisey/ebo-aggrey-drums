@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowRightIcon, CheckIcon, MailIcon } from "@/components/icons";
+import { RequestConfirmation } from "@/components/request-confirmation";
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
 import { FormNotice } from "@/components/ui/form-notice";
@@ -10,6 +11,7 @@ import { createMailto } from "@/lib/mailto";
 
 export function QuoteForm() {
   const [mailto, setMailto] = useState<string | null>(null);
+  const [confirming, setConfirming] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,6 +32,7 @@ export function QuoteForm() {
     ]);
 
     setMailto(href);
+    setConfirming(true);
     window.location.assign(href);
   }
 
@@ -167,6 +170,14 @@ export function QuoteForm() {
           </div>
         </div>
       ) : null}
+
+      <RequestConfirmation
+        key={mailto ?? "confirmation"}
+        open={confirming && mailto !== null}
+        href={mailto ?? ""}
+        context="record"
+        onClose={() => setConfirming(false)}
+      />
     </form>
   );
 }
