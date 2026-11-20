@@ -15,17 +15,6 @@
   --font-mono: var(--font-open-sans);
 }
 
-@keyframes glow-drift {
-  from {
-    opacity: 0.82;
-    transform: scale(1);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1.06);
-  }
-}
-
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -51,11 +40,6 @@
 
 .reveal-delay-3 {
   animation-delay: 210ms;
-}
-
-.glow-drift {
-  animation: glow-drift 18s ease-in-out infinite alternate;
-  will-change: opacity, transform;
 }
 
 .card {

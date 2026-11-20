@@ -76,9 +76,6 @@ export default function HomePage() {
                 Play on your record
               </ButtonLink>
             </div>
-            <p className="placeholder mt-10 text-[12px] font-semibold">
-              [VIDEO LOOP — Ebo to supply]
-            </p>
           </div>
         </Container>
       </section>

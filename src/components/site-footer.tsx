@@ -13,7 +13,11 @@ const pageLinks = [
   { href: "/pricing", label: "Pricing" },
 ];
 
-const socialPlaceholders = ["[INSTAGRAM]", "[YOUTUBE]", "[BANDCAMP]"];
+const socialLinks: Array<{ label: string; href?: string }> = [
+  { label: "Instagram", href: "https://www.instagram.com/_eboaggrey/" },
+  { label: "[YOUTUBE]" },
+  { label: "[BANDCAMP]" },
+];
 
 export function SiteFooter() {
   return (
@@ -57,9 +61,22 @@ export function SiteFooter() {
           <div>
             <Eyebrow>Elsewhere</Eyebrow>
             <ul className="mt-6 grid gap-3">
-              {socialPlaceholders.map((label) => (
-                <li key={label} className="placeholder text-[15px]">
-                  {label}
+              {socialLinks.map((item) => (
+                <li key={item.label}>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[15px] text-line transition-colors hover:text-ink"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span className="placeholder text-[15px]">
+                      {item.label}
+                    </span>
+                  )}
                 </li>
               ))}
               <li>
@@ -72,7 +89,7 @@ export function SiteFooter() {
               </li>
             </ul>
             <p className="mt-5 text-[12px] leading-5 text-ink-subtle">
-              Add Ebo&apos;s profile links here when they are ready.
+              Add the remaining profile links here when they are ready.
             </p>
           </div>
         </div>
